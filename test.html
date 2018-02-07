@@ -1,21 +1,49 @@
 <html>
 <head>
-	<title>The First Page</title>
-	<script>
-		var i=1;
-		while(i<10)
-		{
-			i=i+1;
-			console.log("I = ", i);
+	<title>
+		The First Page
+	</title>
+	<style>
+		.main-block {
+			font-family: 'Comic Sans MS';
 		}
-	</script>
+
+		.main-block-header {
+			font-weight: bold;
+			font-size: large;
+			margin-bottom: 10px;
+			text-align: center;
+		}
+
+		.product-image-wrapper {
+			text-align: center;
+		}
+
+		.product-image {
+			width: 300px;
+
+		}
+	</style>
 </head>
+
 <body>
-	<h1>Привіт всім!</h1>
-	<ul>
-		<li onclick="alert('OK')">Item One
-		<li style="font-weight: bold;color:green;">Item Two
-		<li>Item Three
-	</ul>
+	<div class="main-block">
+		<div class="main-block-header">Мій найкращий товар</div>
+
+		<div>And what a beast it is. The 230-foot-tall Falcon Heavy is essentially a monster mashup of three Falcon 9 cores—two of which have already flown solo. It can produce a maximum thrust at liftoff of more than 5 million pounds, which would make the rocket, if it flies, the most powerful rocket in operation, ahead of the Delta IV Heavy, manufactured by the United Launch Alliance, a joint venture of Boeing and Lockheed Martin.</div>
+
+		<div class="product-image-wrapper">
+			<img class="product-image" src="test.jpg" />
+		</div>
+	</div>
+
+	<div class="main-block">
+		<div class="main-block-header">Відгуки</div>
+		<ul>
+			<li onclick="alert('OK')">Item One
+			<li style="font-weight: bold;color:green;">Item Two
+			<li>Item Three
+		</ul>
+	</div>
 </body>
 </html>
