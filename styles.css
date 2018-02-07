@@ -1,0 +1,19 @@
+.menu-wrapper {
+    text-align: center;
+    color: red;
+}
+
+.menu-item {
+    color: blue;
+    text-decoration: underline;
+}
+
+span {
+    color: red;
+    font-weight: bold;
+}
+
+#project_item {
+    font-size: 40px;
+    text-decoration: none;
+}
