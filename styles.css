@@ -3,9 +3,7 @@
     color: red;
 }
 
-
-
-.menu-item {
+.menu-wrapper span a {
     color: green;
     text-decoration: underline;
     border: solid 1px brown;
@@ -14,10 +12,24 @@
     display: inline-block;
 }
 
-span.menu-item.active-item {
+.menu-wrapper span.active-item a,
+.menu-wrapper span.active-item a:hover {
     text-decoration: none;
-    color: brown;
+    color: red;
     font-size: 18px;
+}
+
+.menu-wrapper span a:hover {
+    text-decoration: none;
+    color: #33ff33;
+}
+
+.menu-wrapper span .submenu {
+    display: none;
+}
+
+.menu-wrapper span a:hover .submenu {
+    display: block;
 }
 
 .menu-wrapper > div > span {
