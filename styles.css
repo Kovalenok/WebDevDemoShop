@@ -3,9 +3,23 @@
     color: red;
 }
 
-.menu-item {
-    color: blue;
+.menu-wrapper span {
+    color: green;
     text-decoration: underline;
+}
+
+.menu-wrapper > div > span {
+    color: blue;
+}
+
+.menu-wrapper span span {
+    color: red;
+    font-size: 32px;
+}
+
+.menu-wrapper i {
+    color: #faf3d2;
+    text-decoration: none;
 }
 
 span {
