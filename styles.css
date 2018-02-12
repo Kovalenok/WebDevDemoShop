@@ -3,9 +3,21 @@
     color: red;
 }
 
-.menu-wrapper span {
+
+
+.menu-item {
     color: green;
     text-decoration: underline;
+    border: solid 1px brown;
+    width: 20%;
+    overflow: hidden;
+    display: inline-block;
+}
+
+span.menu-item.active-item {
+    text-decoration: none;
+    color: brown;
+    font-size: 18px;
 }
 
 .menu-wrapper > div > span {
@@ -17,10 +29,10 @@
     font-size: 32px;
 }
 
-.menu-wrapper i {
-    color: #faf3d2;
-    text-decoration: none;
-}
+/*.menu-wrapper i {*/
+    /*color: #faf3d2;*/
+    /*text-decoration: none;*/
+/*}*/
 
 span {
     color: red;
