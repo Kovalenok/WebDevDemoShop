@@ -1,0 +1,24 @@
+body {
+    border: 1px solid blue;
+}
+
+.content {
+    border: 1px solid green;
+    padding: 10px 10px 10px 10px;
+}
+
+.first-block {
+    border: 1px solid orange;
+    margin-bottom: 18px;
+}
+
+.second-block {
+    border: 1px solid red;
+    margin-top: 8px;
+}
+
+.second-block span {
+    border: 1px dashed black;
+    color: #0D47A1;
+    display: block;
+}
