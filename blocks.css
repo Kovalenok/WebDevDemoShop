@@ -1,10 +1,12 @@
 body {
     border: 1px solid blue;
+    position: relative;
 }
 
 .content {
     border: 1px solid green;
     padding: 10px 10px 10px 10px;
+    /*position: relative;*/
 }
 
 .first-block {
@@ -15,10 +17,49 @@ body {
 .second-block {
     border: 1px solid red;
     margin-top: 8px;
+    /*position: relative;*/
 }
 
-.second-block span {
-    border: 1px dashed black;
-    color: #0D47A1;
-    display: block;
+/*.second-block span {*/
+    /*border: 1px dashed black;*/
+    /*color: #0D47A1;*/
+    /*display: block;*/
+/*}*/
+
+.second-block .catalogue {
+    padding-left: 90px;
+    padding-right: 90px;
+    text-align: left;
+    /*position: relative;*/
+}
+
+.second-block img {
+    width: 250px;
+    margin-left: 18px;
+    margin-top: 18px;
+    box-sizing: border-box;
+    /*position: relative;*/
+}
+
+.second-block img:hover {
+    border: 6px solid red;
+}
+
+.second-block img.active {
+    border: 1px solid red;
+    position: absolute;
+    left:4px;
+    top:4px;
+    margin: 0;
+    width: 500px;
+    z-index: 123;
+}
+
+span.title {
+    position: absolute;
+    top: 4px;
+}
+
+.product-block {
+    position: relative;
 }
