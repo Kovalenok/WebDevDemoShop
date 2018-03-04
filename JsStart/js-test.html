@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blocks demo</title>
+
+    <link rel="stylesheet" href="blocks.css" type="text/css">
+
+</head>
+<body>
+    <div class="header">
+        <div>Item1</div>
+        <div>Item2</div>
+        <div>Item3</div>
+    </div>
+
+    <div class="content">
+        <div class="second-block">
+            <div class="catalogue">
+                <div class="test">
+                    <img src="img/img1.png" />
+                    <div class="description">
+                        The long text with a lot
+                        of wordsThe long text
+                        with a lot of The long
+                        text with a lot of
+                        The long text with a lot of The long text with a lot of ...
+                    </div>
+                </div>
+                <script>
+                    var index = 1;
+
+                    for(var i=0;i<10;i++) {
+                        document.write('<img src="img/img' + (i%3+1) + '.png" />');
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //window.
+        console.log("Hello JS!");
+
+        //console.log(document.getElementsByTagName("img").length);
+
+        var testVar = document.getElementById("superImage");
+
+        console.log(testVar.width);
+        testVar.style.width = "700px";
+        console.log(testVar.width);
+
+        // console.log(document.getElementsByTagName("img"));
+    </script>
+
+</body>
+</html>
