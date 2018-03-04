@@ -1,0 +1,38 @@
+body {
+    border: 1px solid blue;
+    padding: 4px;
+}
+
+.content {
+    border: 1px solid green;
+    padding: 10px 10px 10px 10px;
+}
+
+.box {
+    display: flex;
+    /*flex-wrap: wrap;*/
+
+    justify-content: space-between;
+    border: 1px dashed red;
+    background-color: gold;
+}
+
+.box div {
+    flex-grow: 1;
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    margin-right: 8px;
+    background-color: #0D47A1;
+    padding: 8px;
+}
+
+
+/*.box div:nth-of-type(4) {*/
+.box div:last-child {
+    margin-right: 0;
+}
+
+.box p {
+    border: 1px solid green;
+}
