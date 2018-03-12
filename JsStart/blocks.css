@@ -125,3 +125,11 @@ span.title {
     text-decoration: underline;
     cursor: pointer;
 }
+
+.test1 {
+    border: 1px solid red;
+}
+
+.test2 {
+    border: 1px solid blue;
+}
