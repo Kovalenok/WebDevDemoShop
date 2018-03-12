@@ -133,3 +133,7 @@ span.title {
 .test2 {
     border: 1px solid blue;
 }
+
+.second-block .catalogue img.super {
+    transform: scale(1.5, 1.5);
+}
