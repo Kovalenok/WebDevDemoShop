@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Tiles demo</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     <link rel="stylesheet" href="tiles.css" type="text/css">
 
     <script src="js/jquery-3.3.1.js" type="text/javascript"></script>
@@ -10,6 +12,11 @@
 </head>
 <body>
 <div class="content">
+    <div id="userPanel" class="well userPanel">
+        Раді бічити, <span id="userName"></span>
+        <button class="button danger" onclick="logout()">Вийти з системи</button>
+    </div>
+
     <div class="exchange">
         <label for="amount">Вхідна сума</label>
         <input type="text" id="amount" />
@@ -26,5 +33,93 @@
         </ul>
     </div>
 </div>
+
+<script type="text/javascript">
+    function parseDataFromUrl() {
+        //... js-test.html?username=SuperUser&pwd=SuperPass&remember=yes
+        var sPageURL = decodeURIComponent(window.location.search.substring(1));
+
+        var dataFromUrl = sPageURL.split('&');
+
+        dataFromUrl[0] // username=SuperUser
+        dataFromUrl[1] // username=SuperUser
+
+        var formData = {};
+
+        // https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+        dataFromUrl.forEach(function(item) {
+            //item: 'aaa=bbb' => ['aaa', 'bbb']
+            var parts = item.split("=");
+            formData[parts[0]] = parts[1];
+        });
+
+        return formData;
+    }
+
+    function checkUser(userInfo, validUsersArray) {
+        for(var i=0;i<validUsersArray.length;i++) {
+            if(
+                validUsersArray[i].userName.toLowerCase() == userInfo.username.toLowerCase()
+                && validUsersArray[i].password == userInfo.pwd) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function logout() {
+        console.log("logout called.");
+        localStorage.removeItem('userData');
+        window.location.href = "login.html";
+    }
+
+    var allowedUsers = [
+        {userName: "Alex", password: "secret"},
+        {userName: "Ann", password: "ann"}
+    ];
+
+    var isUserValid = false;
+
+    try {
+        var userInfo = null;
+
+        if(window.location.search != "") {
+            userInfo = parseDataFromUrl();
+            console.log("User info from url: ", userInfo);
+        }
+        else {
+            userInfo = localStorage.getItem('userData');
+            if(userInfo !== undefined) {
+                userInfo = JSON.parse(userInfo);
+            }
+            console.log("User info from local storage: ", userInfo);
+        }
+
+        isUserValid = checkUser(userInfo, allowedUsers);
+    }
+    catch(exObj) {
+        console.log(exObj);
+    }
+
+    if( !isUserValid ) {
+        console.error("User is not valid!", userInfo);
+        window.location.href = "login.html";
+    }
+    else {
+        if(userInfo.remember == "on") {
+            localStorage.setItem('userData', JSON.stringify(userInfo));
+            console.log("Local storage set.", localStorage.getItem('userData'));
+        }
+
+        $("#userName").text(userInfo.username);
+        $(".userPanel").addClass('loggedIn');
+
+        console.log("UI changed.");
+    }
+
+    //     sParameterName,
+    //     i;
+</script>
+
 </body>
 </html>
